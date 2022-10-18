@@ -1,10 +1,22 @@
 {
   "tasks": [
     {
-      "name": "dotnet-format",
+      "name": "dotnet-format-analysers",
       "command": "dotnet",
-      "args": ["format", "src", "--include", "${staged}"],
+      "args": ["format", "analyzers", "src", "--include", "${staged}"],
       "include": ["**/*.cs", "**/*.vb"]
+    },
+    {
+      "name": "dotnet-format-style",
+      "command": "dotnet",
+      "args": ["format", "style", "src", "--include", "${staged}"],
+      "include": ["**/*.cs", "**/*.vb"]
+    },
+    {
+      "name": "Run csharpier",
+      "command": "dotnet",
+      "args": ["csharpier", "${staged}"],
+      "include": ["**/*.cs"]
     }
   ]
 }
