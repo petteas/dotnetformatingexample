@@ -1,0 +1,11 @@
+name: Format Solution
+run-name: Run formating
+on: [push]
+jobs:
+  Run-Formating:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run dotnet format
+        run: dotnet format src --verify-no-changes --verbosity diagnostic
