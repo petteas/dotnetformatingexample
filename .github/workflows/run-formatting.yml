@@ -1,6 +1,6 @@
 name: Format Solution
 run-name: Run formating
-on: [push]
+on: [pull_request]
 jobs:
   Run-Formating:
     runs-on: ubuntu-latest
