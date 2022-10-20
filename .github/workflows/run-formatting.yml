@@ -7,5 +7,11 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Run dotnet format
-        run: dotnet format src --verify-no-changes --verbosity diagnostic
+      - name: Install CSharpier
+        run: dotnet tool install csharpier -g
+      - name: Run dotnet format style
+        run: dotnet format style src --verify-no-changes --verbosity diagnostic
+      - name: Run dotnet format analyzers
+        run: dotnet format analyzers src --verify-no-changes --verbosity diagnostic
+      - name: Run CSharpier
+        run: dotnet-csharpier . --check

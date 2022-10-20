@@ -4,9 +4,11 @@
   "tools": {
     "husky": {
       "version": "0.5.2",
-      "commands": [
-        "husky"
-      ]
+      "commands": ["husky"]
+    },
+    "csharpier": {
+      "version": "0.20.0",
+      "commands": ["csharpier"]
     }
   }
 }
